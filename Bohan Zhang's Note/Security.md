@@ -66,4 +66,5 @@ Ensuring the safety and correctness of information of transmitted over networks.
 #### Authentication
 Supporting communication between pairs of principals.
 #### Digital Signatures
+### Applications of Cryptography
 
