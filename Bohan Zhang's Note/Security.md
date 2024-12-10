@@ -66,5 +66,28 @@ Ensuring the safety and correctness of information of transmitted over networks.
 #### Authentication
 Supporting communication between pairs of principals.
 #### Digital Signatures
-### Applications of Cryptography
 
+## Applications of Cryptography
+### Digital Certifications
+?
+### Access Control & Capabalities
+* Access Control Lists (ACLs): store access control matrix by column
+* * Good when users manage their own files
+* * Protection is data-oriented
+* * Easy to change rights to a resource
+* Capabilities (or C-Lists): Store access control matrix by row
+* * Easy to delegate - avoid the confused deputy
+* * Easy to add/delete users
+* * More difficult to implement
+* * The “Zen of information security”
+### Multilevel Security (MLS) Models
+#### Bell-LaPadula
+* designed to express essential requirements for MLS
+* deals with confidentiality
+* BLP is simple
+* BLP is one of the few security models that can be used to prove things about systems
+* BLP has inspired other security models
+#### Biba’s Model
+* BLP for confidentiality, Biba for integrity (Biba is to prevent unauthorized writing)
+* Biba is (in a sense) the dual of BLP
+* Low water mark principle for integrity
