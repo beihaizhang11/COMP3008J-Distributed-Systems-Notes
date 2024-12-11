@@ -7,10 +7,10 @@
 * Multiple components of the system are responsible for delivering a common global system time.
 * **Examples**: Averaging Algorithms; Multiple External Time Sources
 ### Chistian's Algorithms
-![Chistian's Algorithms](images/Cristians_algorithm_illustration.png)
+![Chistian's Algorithms](Images/Cristians_algorithm_illustration.png)
 * The process on the client machine sends the request for fetching clock time(time at the server) to the Clock Server at time T_0.
 * The Clock Server listens to the request made by the client process and returns the response in form of clock server time.
-* The client process fetches the response from the Clock Server at time T_1 and calculates the synchronized client clock time using the formula: ![Chistian's Algorithms Latex](images/quicklatex.com-787d0e5f924d43a3aea97d3c61c8163b_l3.svg)
+* The client process fetches the response from the Clock Server at time T_1 and calculates the synchronized client clock time using the formula: ![Chistian's Algorithms Latex](Images/quicklatex.com-787d0e5f924d43a3aea97d3c61c8163b_l3.svg)
 ### Berkeley Algorithm
 *  An individual node is chosen as the master node from a pool node in the network. This node is the main node in the network which acts as a master and the rest of the nodes act as slaves. The master node is chosen using an election process/leader election algorithm.
 *  Master node periodically pings slaves nodes and fetches clock time at them using Cristian’s algorithm.
