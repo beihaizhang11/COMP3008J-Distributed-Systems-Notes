@@ -1,3 +1,39 @@
+# Clocks知识结构
+```shell
+
+# 时钟类型概述
+|-- 物理时钟
+`-- 逻辑时钟
+    |-- Lamport逻辑时钟
+    `-- 向量时钟
+
+
+# 物理时钟同步方法
+|-- 集中式
+|   |-- Cristian算法
+|   `-- Berkeley算法
+|
+`-- 分布式
+    |-- 平均算法
+    `-- NTP
+
+# 问题与解决方案流程
+1. 基本时间问题
+   |-- 地球自转不均匀性
+   `-- 解决方案：原子时(铯133)
+
+2. 分布式时间挑战
+   |-- 计算机之间的时钟偏差
+   `-- 解决方案：
+       |-- 物理同步(UTC广播)
+       `-- 逻辑同步(Lamport方法)
+
+3. 事件排序挑战
+   |-- 物理时间限制
+   `-- 解决方案：
+       |-- Lamport逻辑时钟("happened-before"关系)
+       `-- 向量时钟(因果关系检测)
+```
 # Physical Clocks
 ## Clock Synchronization Algorithms
 ### Centralized Algorithms
