@@ -77,7 +77,9 @@ How to deal with the placement and accessing of shared resources in a manner tha
 ### Aim
 Ensure that any node can access any resource by routing each request through a sequence of nodes.
 ### Be Responsible for
-* Creating GUID’s for all new resources
+* Clients wishing to invoke an operation on a resource submit a request, which includes a GUID (unique identifier) for the resource, to the routing overlay algorithm. It directs the request to a node on which a replica (or the original) of
+the resource resides.
+* Creating GUID’s for all new resources.
 * Announcing the existence of the new resources to ensure that the resource is reachable by all clients.
 * Handling the removal of references to shared resources that are no longer in the system
 * managing the addition/removal of nodes to/from the system.
