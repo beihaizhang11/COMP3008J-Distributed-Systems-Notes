@@ -16,7 +16,9 @@ A mechanism for sending a single message to a group of processes (almost) simult
 * A primitive multicast protocol that guarantees the delivery of messages to all processes in a (static) group
 * Implementation builds on an assumed unicast protocol that guarantees message delivery (e.g. TCP)
 * This approach suffers from “ACK-implosion”
+
 ## Reliable Multicast
+
 ### Reliable Multicast is an extension of the Basic Multicast service:
 * Guaranteed Delivery (Basic Multicast)
 * Integrity (完整性)
