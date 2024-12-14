@@ -35,14 +35,20 @@
        `-- 向量时钟(因果关系检测)
 ```
 # Physical Clocks
+
 ## Clock Synchronization Algorithms
+
 ### Centralized Algorithms
 * A **single** component of the system is responsible for delivering a common global system time.
 * **Examples**: Cristian’s Algorithm; Berkeley Algorithm
+
 ### Decentralized Algorithms
+
 * Multiple components of the system are responsible for delivering a common global system time.
 * **Examples**: Averaging Algorithms; Multiple External Time Sources
+
 ### Chistian's Algorithms
+
 ![Chistian's Algorithms](Images/Cristians_algorithm_illustration.png)
 * The process on the client machine sends the request for fetching clock time(time at the server) to the Clock Server at time T_0.
 * The Clock Server listens to the request made by the client process and returns the response in form of clock server time.
@@ -65,13 +71,19 @@
 ### two observations
 * if two processes do not interact, then their clocks do not need to be synchronized
 * it does not matter that two processes share a common notion of what the “real” current time is. What does matter is that the processes have some agreement on the order in which certain events occur.
+
 ## Vector Clock
+
 A vector clock is an algorithm for generating a partial ordering of events in a distributed system and detecting causality violations.
 
 # Global State
 ## Cut
-?
+?![image-20241213233132706](./image-20241213233132706.png)
+
 ## Snapshot algorithm
+
+> Mark by LL
+
 A snapshot algorithm is used to create a consistent snapshot of the global state of a distributed system. Due to the lack of globally shared memory and a global clock, this isn't trivially possible.
 * Marker sending rule for a process P :
 * * Process p records its own local state
@@ -82,7 +94,9 @@ A snapshot algorithm is used to create a consistent snapshot of the global state
 * * * After recording the state of incoming channel C1, process Q Follows the marker sending rule
 * * If process Q has already recorded its state
 * * * Record the state of incoming channel C1 as the sequence of messages received along channel C1 after the state of Q was recorded and before Q received the marker along C1 from process P.
-### **Benefits** 
+
+### **Benefits**
+
 * Checkpointing: It helps in creating checkpoint. If somehow application fails, this checkpoint can be reused
 * Garbage collection: It can be used to remove objects that do not have any references.
 * It can be used in deadlock and termination detection.
@@ -90,11 +104,18 @@ A snapshot algorithm is used to create a consistent snapshot of the global state
 
 # Mutual Exclusion
 
+Only one process can access shared resource at a time.
+
 ## Centralized
+
 a single coordinator controls whether a process can enter a critical region.
+
 ### Advantage
+
 * Fair; No process starvation; Easy to implement.
+
 ### Disadvantage
+
 * There’s a single point of failure!
 * The coordinator is a bottleneck on busy systems.
 
