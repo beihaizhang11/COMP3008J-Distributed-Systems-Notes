@@ -31,7 +31,7 @@ A mechanism for sending a single message to a group of processes (almost) simult
 
 ## Group Membership Service (GMS)
 ### Definition
-A Group Membership Service (GMS) is a service that provides support for the (dynamic) management of both group membership and multicast communication.
+A Group Membership Service (GMS) is a service that provides support for the (dynamic) management of both **group membership** and **multicast communication**.
 ### Main Objectives
 * Providing an interface for group membership change.
 * Implementing a failure detector.
