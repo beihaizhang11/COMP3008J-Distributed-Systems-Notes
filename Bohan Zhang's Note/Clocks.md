@@ -86,14 +86,14 @@ A vector clock is an algorithm for generating a partial ordering of events in a 
 
 A snapshot algorithm is used to create a consistent snapshot of the global state of a distributed system. Due to the lack of globally shared memory and a global clock, this isn't trivially possible.
 * Marker sending rule for a process P :
-* * Process p records its own local state
-* * For each outgoing channel C from process P, P sends marker along C before sending any other messages along C. (Note: Process Q will receive this marker on his incoming channel C1.)
+  - Process p records its own local state
+  - For each outgoing channel C from process P, P sends marker along C before sending any other messages along C. (Note: Process Q will receive this marker on his incoming channel C1.)
 * Marker receiving rule for a process Q :
-* * If process Q has not yet recorded its own local state then
-* * * Record the state of incoming channel C1 as an empty sequence or null.
-* * * After recording the state of incoming channel C1, process Q Follows the marker sending rule
-* * If process Q has already recorded its state
-* * * Record the state of incoming channel C1 as the sequence of messages received along channel C1 after the state of Q was recorded and before Q received the marker along C1 from process P.
+  - If process Q has not yet recorded its own local state then
+    - Record the state of incoming channel C1 as an empty sequence or null.
+    - After recording the state of incoming channel C1, process Q Follows the marker sending rule
+  - If process Q has already recorded its state
+    - Record the state of incoming channel C1 as the sequence of messages received along channel C1 after the state of Q was recorded and before Q received the marker along C1 from process P.
 
 ### **Benefits**
 
